@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f6fb">
+<title>306 西综训练台 · 个性化训练系统（框架版）</title>
+<!-- 在样式表之前确定主题，避免深色模式闪白 -->
+<script>
+(function () {
+  var t = null;
+  try { t = new URLSearchParams(location.search).get('theme'); } catch (e) {}
+  try { t = t || localStorage.getItem('ml306.theme'); } catch (e) {}
+  document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+})();
+</script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div id="app" class="app"></div>
+  <div id="modal-root"></div>
+  <div id="toast" class="toast"></div>
+
+  <!-- 数据层：课程大纲 → 题库分片 → 引擎 → 状态 → 视图 -->
+  <script src="js/data.js"></script>
+  <script src="data/q-basic.js"></script>
+  <script src="data/q-clinical.js"></script>
+  <script src="data/q-ext.js"></script>
+  <script src="data/q-ext-usmle.js"></script>
+  <script src="data/q-ext-jp.js"></script>
+  <script src="data/tr-usmle-en.js"></script>
+  <script src="data/tr-jp-ja.js"></script>
+  <script src="data/tr-jp-extra.js"></script>
+  <script src="data/q-306-phys.js"></script>
+  <script src="data/q-306-bioc.js"></script>
+  <script src="data/q-bioc-macro.js"></script>
+  <script src="data/q-bioc-sugar.js"></script>
+  <script src="data/q-bioc-oxi.js"></script>
+  <script src="data/q-306-path.js"></script>
+  <script src="data/q-306-int-a.js"></script>
+  <script src="data/q-306-int-b.js"></script>
+  <script src="data/q-306-sur.js"></script>
+  <script src="data/q-306-hum.js"></script>
+  <!-- 期中模拟卷导入（问卷星）：生理学 60 题 / 生物化学 60 题 -->
+  <script src="data/q-exam-phys-midterm.js"></script>
+  <script src="data/q-exam-bioc-midterm.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/bank.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/view-today.js"></script>
+  <script src="js/view-train.js"></script>
+  <script src="js/view-knowledge.js"></script>
+  <script src="js/view-stats.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
